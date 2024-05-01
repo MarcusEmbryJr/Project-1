@@ -7,14 +7,21 @@
   box-sizing: border-box; 
   
 } 
+html{
+    scroll-behavior: smooth;
+}
 h1, h2, h3, h4, h5, h6 span{
 color: #000000e2;
 text-align: center;
 line-height: 1.25;
 }
+
 p{
     line-height:1.5 ;
     font-size: 20px;
+}
+a{
+    
 }
 li{
  list-style: none;   
@@ -87,7 +94,7 @@ border-radius: 50px;
 }
 .nav__link--anchor-Primary:hover{
 
-   transition: ease; 
+   background-color: #5d3eff;
    }
 .nav__link--anchor-1:hover{
     transition: ease;
@@ -202,6 +209,7 @@ padding: 0 16px;
     justify-content: center;
     position: relative;
     width: 25%;
+
 }
 .language__list{
 display: flex;
@@ -240,21 +248,30 @@ opacity:1;
     opacity: 1;
 }
 
-   /* Prjects */
+   /* projects */
 
 .project__img{
-width: 100%;
-transition: all 500ms ease;
-display: flex;
-
-}
-
-.project__wrapper{
     display: flex;
+width: 100%;
+height: 100%;
+transition: all  500ms ease;
+padding: 50px;
+position: relative;
+align-items: center;
+}
+.project__wrapper{
+display: flex;
     box-shadow: 0 20px 80px rgb(0,0,0.45);
     overflow: hidden;
+    margin-left: 250px;
     border-radius: 20px;
+    margin-bottom: 90px;
+    position: relative;
+    height: 500px;
+    width: 900px;  
 }
+
+
 .project__wrapper:before {
     content: "";
     position: absolute;
@@ -265,15 +282,53 @@ display: flex;
     background-color: #1c1d25;
     opacity: 0;
     transition: opacity 450ms ease;
-    z-index: 2;
+    z-index: index 3;
+    transform: translateY(0);
 }
 .project:hover .project__wrapper:before{
-    opacity: 0.7;
+    opacity: 0.9;
 }
 .project:hover .project__img{
     transform: scale(1.07);
     filter:blur(5px) ;
+    opacity: 0.2;
 }
 .project__list{
-    padding:40px;
+    padding-top: 40px;
+}
+.project:hover .project__description{
+    opacity: 1;
+    transform: translateY(0);
+    margin-right: 50;
+}
+.project__description{
+    position: absolute;
+    top: 100px;
+    left: 150px;
+    transform: translateY(100%);
+    max-width: 550px;
+    z-index: 3;
+    opacity: 0;
+    transition: transform 450ms, opacity 300ms;
+    
+}
+.projet__description--title{
+    font-size:40px;
+    margin-right: 50px;
+    }
+    .project__descrption--link{
+    font-size: 20px;
+
+}
+.project__description--para{
+    margin: 46px 0;
+
+}
+.project__description--para,
+  .project__description--title,
+  .project__descrption--link,
+  .project__description--sub_title{
+    text-align:right;
+    color: #f8f8f8;
+    margin-right:10px;
 }
