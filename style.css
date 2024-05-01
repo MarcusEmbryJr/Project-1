@@ -21,7 +21,26 @@ p{
     font-size: 20px;
 }
 a{
-    
+  text-decoration:none;
+  position: relative;  
+}
+.link__hover-effect:after {
+    content:"";
+    position: absolute;
+    height: 3px;
+    background-color:black;
+    width: 0;
+    bottom: -3px;
+  right: 0;
+transition: all 400ms ease;
+}
+.link__hover-effect--white:after{
+    background-color: #5d3eff;
+}
+.link__hover-effect:hover::after{
+    width: 100%;
+    left: 0;
+
 }
 li{
  list-style: none;   
@@ -39,6 +58,7 @@ li{
     width: 100%;
     min-width:800px ;
     margin: 0 auto;
+    padding: 0 12px;
 
 }
 .text--purple{
@@ -64,6 +84,8 @@ nav{
     justify-content: center;
     align-items: center;
     justify-content: space-between;
+    padding: 0 12px;
+
 }
 .nav__link--list{
     display: flex;
@@ -141,7 +163,7 @@ flex-direction: column;
     box-shadow: 0 8px 16px rgba(0,0,0.16);
     margin-bottom: 50px;
     margin-top: 15px;
-    animation: animate-profile-picture 800ms,200ms, 1s backwards;
+    animation: animate-profile-picture 900ms,200ms, 1s backwards;
 }
 
 @keyframes animate-profile-picture {
@@ -181,7 +203,7 @@ animation: fade-up 650ms 200ms;
 }
 .about-me__link{
 font-size: 30px;
-text-decoration: none;
+
 padding: 0 16px;
 }
 @keyframes fade-up {
@@ -201,8 +223,30 @@ padding: 0 16px;
     animation: fade-up 650ms 200ms backwards;
 }
 .about-me__img{
-    max-width: 100%;
+   width: 100%;
+    animation: fade-in 1200ms 800ms backwards;
 }
+@keyframes fade-in{
+    0% {
+        opacity: 0;}
+        100%{
+            opacity: 1;
+    }
+}
+.wave{
+    display: inline-block;
+animation: animate-wave 500ms infinite ease-in-out;
+}
+@keyframes animate-wave{
+    0%{
+        transform:rotate(0);}
+        50%{
+            transform: rotate(30deg);}
+            100%{
+                transform: rotate(0);
+            }
+        }
+
 /* TECH STACK */
 .language{
     display: flex;
@@ -216,6 +260,7 @@ display: flex;
 justify-content: center;
     width: 100%;
 flex-wrap: wrap;
+justify-content: center;
 }
 .language__img--wrapper{
     display: flex;
@@ -270,6 +315,9 @@ display: flex;
     height: 500px;
     width: 900px;  
 }
+.project:last-child{
+    margin-bottom: 40px;
+}
 
 
 .project__wrapper:before {
@@ -305,7 +353,7 @@ display: flex;
     position: absolute;
     top: 100px;
     left: 150px;
-    transform: translateY(100%);
+    transform: translateY(-50%);
     max-width: 550px;
     z-index: 3;
     opacity: 0;
@@ -318,7 +366,6 @@ display: flex;
     }
     .project__descrption--link{
     font-size: 20px;
-    position: relative;
 
 }
 .project__description--para{
@@ -333,3 +380,111 @@ display: flex;
     color: #f8f8f8;
     margin-right:10px;
 }
+/*FOOTER*/
+footer{
+border-color: #242424;
+}
+
+.footer__row{
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 8% 0;
+
+}
+.footer__logo--img{
+    width: 1500px;
+    height: 400px;
+}
+.footer__social--link{
+    color: #3b3ecf62;
+}
+.footer__social--link,
+.footer__copyright,
+.footer__logo--popper{
+    color: rgb(29, 22, 179);
+}
+.footer__logo{
+   
+}
+.footer__social--list{
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.footer__logo--popper{
+    position: absolute;
+right: 39%;
+    top: 270px;
+    color: #f8f8f8;
+    font-weight: 700;
+    opacity: 0;
+    transition: all 800ms ease;
+
+}
+.footer__anchor{
+position: relative;
+margin-bottom: 20px;
+}
+.footer__anchor:hover .footer__logo--popper{
+    transform: translateX(60px);
+    opacity: 1;
+
+}
+/*Smart phones, tablets*/
+@media (max-width: 768px;) {
+    nav{
+        height: 68px;
+    }
+    h1{
+        font-size: 28px;
+    }
+    .about-me__para{
+        font-size: 18px;
+    }
+    .language{
+        width: 100%/2
+    }
+    .language__list{
+        justify-content: center;
+    }
+    .project__description--para{
+        font-size: 14px;
+    }
+    .project__description{
+        padding-right: 30px;
+        left: 30px;
+    }
+}
+@media (max-width: 480px;){
+    .nav__link:not(:last-child){
+        display: none;
+    }
+    .project__description--para{
+        display: none;
+    }
+    .project__descrption--links{
+        justify-content: center;
+    }
+    .project__description--sub_title{
+        text-align: center;
+        margin: 12px 0;
+    }
+    .project__description--title{
+        line-height: 1;
+        font-size: 32px;
+        text-align: center;
+    }
+    .project__description{
+        padding: 0;
+        left: 0;
+        width: 100%;
+    }
+
+}
+
+
