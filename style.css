@@ -314,21 +314,22 @@ display: flex;
 }
 .projet__description--title{
     font-size:40px;
-    margin-right: 50px;
+    margin-right: 0px;
     }
     .project__descrption--link{
     font-size: 20px;
+    position: relative;
 
 }
 .project__description--para{
-    margin: 46px 0;
+    margin: 10px 20px;
 
 }
 .project__description--para,
   .project__description--title,
   .project__descrption--link,
   .project__description--sub_title{
-    text-align:right;
+    text-align:center;
     color: #f8f8f8;
     margin-right:10px;
 }
